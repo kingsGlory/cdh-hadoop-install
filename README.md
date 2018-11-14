@@ -89,7 +89,7 @@ yum install hadoop-yarn-nodemanager -y
 
 
 ## Hive部署
-### HiveServer2 & Metastore
+### install
 sudo yum install hive hive-metastore hive-server2 zookeeper hadoop-lzo -y;  
 sudo mkdir -p /opt/log/hive/;  
 sudo chmod -R 777 /opt/log/hive/;  
@@ -99,6 +99,16 @@ sudo mkdir -p /tmp/hive/;
 sudo chown hive: /tmp/hive/;  
 sudo touch /var/log/hive/hive_audit.log;  
 sudo chmod 777 /var/log//hive/hive_audit.log  
+
+### conf setting 
+/etc/hive/conf/hive-site.xml
+
+### start
+sudo /etc/init.d/hive-metastore start  
+sudo /etc/init.d/hive-server2 start
+
+### test
+select count(1);
 
 ## Hbase部署
 
