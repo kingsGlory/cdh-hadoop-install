@@ -19,7 +19,7 @@ cp zoo.cfg /etc/zookeeper/conf/zoo.cfg
 
 ## Hadoop部署
 ### 建目录
-common
+####common  
 mkdir -p /opt/log/hadoop  
 chown :hadoop /opt/log/hadoop  
 chmod 755  /opt/log/hadoop  
@@ -31,7 +31,7 @@ mkdir -p /opt/log/hdfs
 chown hdfs:hadoop /opt/log/hdfs  
 chmod 755 /opt/log/hdfs  
 
-nn,jn
+####nn jn  
 mkdir -p /opt/data/hdfs/namenode
 chown hdfs:hadoop /opt/data/hdfs/namenode
 chmod 755 /opt/data/hdfs/namenode
@@ -39,7 +39,7 @@ mkdir -p /opt/data/hdfs/journalnode
 chown hdfs:hadoop /opt/data/hdfs/journalnode
 chmod 755 /opt/data/hdfs/journalnode
 
-dn nm
+#####dn nm  
 mkdir  /{{item}}/hdfs  
 chown hdfs:hadoop /{{data}}/hdfs  
 chmod 700  /{{data}}/hdfs 
