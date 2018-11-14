@@ -89,6 +89,15 @@ yum install hadoop-yarn-nodemanager -y
 
 
 ## Hive部署
+sudo yum install hive hive-metastore hive-server2 zookeeper hadoop-lzo -y
+sudo mkdir -p /opt/log/hive/;
+sudo chmod -R 777 /opt/log/hive/;
+sudo mkdir -p /opt/log/hadoop/;
+sudo chmod -R 777 /opt/log/hadoop/;
+sudo mkdir -p /tmp/hive/;
+sudo chown hive: /tmp/hive/;
+sudo touch /var/log/hive/hive_audit.log;
+sudo chmod 777 /var/log//hive/hive_audit.log
 
 ## Hbase部署
 
