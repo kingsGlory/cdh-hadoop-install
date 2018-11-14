@@ -51,7 +51,7 @@ chmod 755 /{{item}}/yarn
 
 ### jn
 安装：  
-yum install hadoop-hdfs-journalnode -y 
+yum install hadoop-hdfs-journalnode -y  
 启动:  
 /etc/init.d/hadoop-hdfs-journalnode start  
 
