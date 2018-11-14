@@ -32,17 +32,17 @@ chown hdfs:hadoop /opt/log/hdfs
 chmod 755 /opt/log/hdfs  
 
 #### nn jn  
-mkdir -p /opt/data/hdfs/namenode
-chown hdfs:hadoop /opt/data/hdfs/namenode
-chmod 755 /opt/data/hdfs/namenode
-mkdir -p /opt/data/hdfs/journalnode
-chown hdfs:hadoop /opt/data/hdfs/journalnode
-chmod 755 /opt/data/hdfs/journalnode
+mkdir -p /opt/data/hdfs/namenode  
+chown hdfs:hadoop /opt/data/hdfs/namenode  
+chmod 755 /opt/data/hdfs/namenode  
+mkdir -p /opt/data/hdfs/journalnode  
+chown hdfs:hadoop /opt/data/hdfs/journalnode  
+chmod 755 /opt/data/hdfs/journalnode  
 
 ##### dn nm  
 mkdir  /{{item}}/hdfs  
 chown hdfs:hadoop /{{data}}/hdfs  
-chmod 700  /{{data}}/hdfs 
+chmod 700  /{{data}}/hdfs  
 mkdir /{{item}}/yarn/local  
 mkdir /{{item}}/yarn/logs  
 mkdir /{{item}}/yarn  
