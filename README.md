@@ -53,39 +53,39 @@ chmod 755 /{{item}}/yarn
 安装：  
 yum install hadoop-hdfs-journalnode -y 
 启动:  
-/etc/init.d/hadoop-hdfs-journalnode start
+/etc/init.d/hadoop-hdfs-journalnode start  
 
 ### nn 
 安装:  
-yum install hadoop-hdfs-namenode -y
+yum install hadoop-hdfs-namenode -y  
 启动:  
-/etc/init.d/hadoop-hdfs-namenode start
-hdfs hdfs namenode -format
-bin/hdfs namenode  -bootstrapStandby
+/etc/init.d/hadoop-hdfs-namenode start  
+hdfs hdfs namenode -format  
+bin/hdfs namenode  -bootstrapStandby  
 
-### zkfc
+### zkfc  
 安装:  
-yum install hadoop-hdfs-zkfc -y 
+yum install hadoop-hdfs-zkfc -y  
 启动:  
-/etc/init.d/hadoop-hdfs-zkfc start
+/etc/init.d/hadoop-hdfs-zkfc start  
 
-### rm
-安装:
-yum install hadoop-yarn-resourcemanager -y
-启动:
-/etc/init.d/hadoop-yarn-nodemanager start
+### rm  
+安装:  
+yum install hadoop-yarn-resourcemanager -y  
+启动:  
+/etc/init.d/hadoop-yarn-nodemanager start  
 
-### dn
-安装：
-yum install hadoop-hdfs-datanode -y
-启动：
-/etc/init.d/hadoop-hdfs-datanode start
+### dn  
+安装： 
+yum install hadoop-hdfs-datanode -y  
+启动： 
+/etc/init.d/hadoop-hdfs-datanode start  
 
-### nm
-安装: 
-yum install hadoop-yarn-nodemanager -y
-启动:
-/etc/init.d/hadoop-yarn-nodemanager start
+### nm 
+安装:   
+yum install hadoop-yarn-nodemanager -y  
+启动:  
+/etc/init.d/hadoop-yarn-nodemanager start  
 
 
 ## Hive部署
