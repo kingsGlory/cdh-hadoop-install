@@ -3,19 +3,16 @@
 ## [准备工作](docs/prepare.md)
 ## Zookeeper部署
 所有操作都在root权限下执行
-yum install zookeeper-server  
-dataDir=/data/zookeeper  
-dataLogDir=/data1/zookeeper  
-log4jDir=/opt/log/zookeeper  
-mkdir /data/zookeeper  
-mkdir /data1/zookeeper  
-mmkdir -p /opt/log/zookeeper  
-chown  zookeeper:zookeeper /data/zookeeper 
-chown  zookeeper:zookeeper /data1/zookeeper  
-chown  zookeeper:zookeeper /opt/log/zookeeper  
-cp log4j.properties /etc/zookeeper/conf/log4j.properties  
-cp zoo.cfg /etc/zookeeper/conf/zoo.cfg  
-/etc/init.d/zookeeper-server start  
+在big-data-1上:
+cd cluster
+sh install-zk.sh
+在big-data-1至big-data-3依次执行：
+echo 1 >  /data/zookeeper/myid  
+echo 2 >  /data/zookeeper/myid  
+echo 3 >  /data/zookeeper/myid  
+在big-data-1
+pssh -i -h zk.host sudo /etc/init.d/zookeeper-server init
+pssh -i -h zk.host sudo /etc/init.d/zookeeper-server start
 
 ## Hadoop部署
 ### 建目录
