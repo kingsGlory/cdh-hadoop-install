@@ -6,7 +6,7 @@
 在big-data-1上:  
 cd cluster  
 sh install-zk.sh  
-在big-data-1至big-data-3分别执行 
+在big-data-1至big-data-3分别执行  
 echo 1 >  /data/zookeeper/myid    
 echo 2 >  /data/zookeeper/myid    
 echo 3 >  /data/zookeeper/myid    
