@@ -2,17 +2,17 @@
 
 ## [准备工作](docs/prepare.md)
 ## Zookeeper部署
-所有操作都在root权限下执行
-在big-data-1上:
-cd cluster
-sh install-zk.sh
-在big-data-1至big-data-3依次执行：
-echo 1 >  /data/zookeeper/myid  
-echo 2 >  /data/zookeeper/myid  
-echo 3 >  /data/zookeeper/myid  
-在big-data-1
-pssh -i -h zk.host sudo /etc/init.d/zookeeper-server init
-pssh -i -h zk.host sudo /etc/init.d/zookeeper-server start
+所有操作都在root权限下执行  
+在big-data-1上:  
+cd cluster  
+sh install-zk.sh  
+在big-data-1至big-data-3依次执行：  
+echo 1 >  /data/zookeeper/myid    
+echo 2 >  /data/zookeeper/myid    
+echo 3 >  /data/zookeeper/myid    
+在big-data-1  
+pssh -i -h zk.host sudo /etc/init.d/zookeeper-server init  
+pssh -i -h zk.host sudo /etc/init.d/zookeeper-server start  
 
 ## Hadoop部署
 ### 建目录
