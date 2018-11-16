@@ -13,6 +13,9 @@ echo 3 >  /data/zookeeper/myid
 在big-data-1  
 pssh -i -h zk.host sudo /etc/init.d/zookeeper-server init  
 pssh -i -h zk.host sudo /etc/init.d/zookeeper-server start  
+卸载:
+pssh -i -h zk.host sudo yum remove zookeeper-server
+
 
 ## Hadoop部署
 ### 建目录
