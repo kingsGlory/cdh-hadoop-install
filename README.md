@@ -6,14 +6,14 @@
 在big-data-1上:  
 cd cluster  
 sh install-zk.sh  
-在big-data-1至big-data-3依次执行：  
+在big-data-1至big-data-3分别执行 
 echo 1 >  /data/zookeeper/myid    
 echo 2 >  /data/zookeeper/myid    
 echo 3 >  /data/zookeeper/myid    
 在big-data-1  
 pssh -i -h zk.host sudo /etc/init.d/zookeeper-server init  
 pssh -i -h zk.host sudo /etc/init.d/zookeeper-server start  
-卸载:
+卸载:  
 pssh -i -h zk.host sudo yum remove zookeeper-server
 
 
