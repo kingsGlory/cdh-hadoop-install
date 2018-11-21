@@ -112,7 +112,7 @@ select count(1);
 
 ## Hbase部署
 
-## Spark部署
+## [Spark部署](docs/spark/install.md)
 
 
 
