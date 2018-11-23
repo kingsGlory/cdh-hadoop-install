@@ -20,7 +20,7 @@ fi
 echo "Download finished, extracting..."
 tar -zvxf $spark_version.tgz -C /usr/local/
 
-ln -s /usr/local/spark /usr/local/$spark_version
+ln -s /usr/local/$spark_version /usr/local/spark
 
 echo "Installed finished, configurating..."
 # 将配置文件拷贝到spark对应目录下
