@@ -12,3 +12,10 @@ spark客户端的部署分为如下几个步骤
 3. 修改配置文件和环境变量等；
 
 其中核心的配置均在配置文件中
+
+## 部署步骤
+1. 做好准备工作； 
+2. cd 到 cdh-hadoop-install 目录下；
+3. 运行脚本 `./scripts/spark/install-spark.sh`；
+4. 测试spark客户端是否部署OK；
+5. 部署 spark history server；
