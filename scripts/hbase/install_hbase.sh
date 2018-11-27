@@ -66,7 +66,7 @@ do_hbase_install(){
         ssh -p $SSH_PORT $host "sudo yum install -y ${HBASE_MASTER}"    
 
         #create log dir and log file
-        ssh -p $SSH_PORT $host '[ ! -f /opt/log/hbase/hbase.log ] && sudo mkdir -p /opt/log/hbase && sudo touch /opt/log/hbase/hbase.log && sudo chmod -R 777 /opt/log/hbase && sudo chown -R hbase:hbase /opt/log/hbase'
+        ssh -p $SSH_PORT $host '[ ! -f /opt/log/hbase/hbase.log ] && sudo mkdir -p  /opt/log/hbase && mkdir -p /opt/data/hbase/local/jars && sudo touch /opt/log/hbase/hbase.log && sudo chmod -R 777 /opt/log/hbase && sudo chown -R hbase:hbase /opt/log/hbase'
 
     done
 
@@ -83,8 +83,8 @@ do_hbase_install(){
         ssh -p $SSH_PORT $host "sudo yum remove -y ${HBASE_CORE}"
 
         ssh -p $SSH_PORT $host "sudo yum install -y ${HBASE_REGIONSERVER}"
-      
-        ssh -p $SSH_PORT $host '[ ! -f /opt/log/hbase/hbase.log ] && sudo mkdir -p /opt/log/hbase && sudo touch /opt/log/hbase/hbase.log && sudo chmod -R 777 /opt/log/hbase && sudo chown -R hbase:hbase /opt/log/hbase'
+      /opt/data/hbase/local/jars
+        ssh -p $SSH_PORT $host '[ ! -f /opt/log/hbase/hbase.log ] && sudo mkdir -p /opt/log/hbase && mkdir -p /opt/data/hbase/local/jars && sudo touch /opt/log/hbase/hbase.log && sudo chmod -R 777 /opt/log/hbase && sudo chown -R hbase:hbase /opt/log/hbase'
     done
 }
 
