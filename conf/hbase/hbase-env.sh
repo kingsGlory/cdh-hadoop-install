@@ -30,16 +30,16 @@ export HBASE_ROOT_LOGGER=INFO,DRFA
 # Where log files are stored.  $HBASE_HOME/logs by default.
 export HBASE_LOG_DIR=/opt/log/hbase
 
-export HBASE_OPTS="$HBASE_OPTS -Djava.security.auth.login.config=/etc/hbase/conf/zk-jaas.conf"
+export HBASE_OPTS="$HBASE_OPTS"
 
 # The maximum amount of heap to use, in MB. Default is 1000.
 export HBASE_HEAPSIZE=2048
 export HBASE_JMX_BASE="-Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false"
 #export HBASE_XDEBUG_BASE=" -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address"
-export HBASE_MASTER_OPTS="$HBASE_JMX_BASE -Xms8g -Xmx8g -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -Dcom.sun.management.jmxremote.port=10103"
-export HBASE_REGIONSERVER_OPTS="-Xms64g -Xmx64g -Xmn16g -XX:+UseParNewGC -XX:+UseConcMarkSweepGC \
+export HBASE_MASTER_OPTS="$HBASE_JMX_BASE -Xms4g -Xmx4g -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -Dcom.sun.management.jmxremote.port=10103"
+export HBASE_REGIONSERVER_OPTS="-Xms6g -Xmx6g -Xmn6g -XX:+UseParNewGC -XX:+UseConcMarkSweepGC \
    -XX:CMSInitiatingOccupancyFraction=65 -XX:+CMSParallelRemarkEnabled \
-   -XX:SurvivorRatio=28 -XX:PermSize=3g -XX:MaxPermSize=3g \
+   -XX:SurvivorRatio=28 -XX:PermSize=3g -XX:MaxPermSize=1g \
    -verbose:gc -XX:+PrintGCTimeStamps -XX:+PrintGCDetails -Xloggc:$HBASE_LOG_DIR/rs-gc.log \
    $HBASE_JMX_BASE -Dcom.sun.management.jmxremote.port=10102"
 
