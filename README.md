@@ -111,6 +111,20 @@ sudo /etc/init.d/hive-server2 start
 select count(1);
 
 ## Hbase部署
+### 准备
+1、将项目的xx/conf/hbase目录以/conf的形式复制入xx/script/hbase下
+2、修改xx/script/hbase/masters为master节点
+3、修改xx/script/hbase/regionservers为rs节点
+### 安装
+执行xx/script/hbase/install_hbase.sh install
+### 同步配置
+执行xx/script/hbase/hbase_manager.sh sync
+### 启动
+执行xx/script/hbase/hbase_manager.sh start
+### 验证服务状态
+1、xx/script/hbase/hbase_manager.sh status
+2、访问 http://[master_host_ip]:60010/master-status
+3、访问hbase shell -->list
 
 ## [Spark部署](docs/spark/install.md)
 
