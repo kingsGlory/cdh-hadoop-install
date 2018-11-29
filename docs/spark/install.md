@@ -16,9 +16,21 @@ spark客户端的部署分为如下几个步骤
 ## 部署步骤
 1. 做好准备工作； 
 2. cd 到 cdh-hadoop-install 目录下；
-3. 运行脚本 `./scripts/spark/install-spark.sh`；
+3. 运行脚本 `./scripts/spark/install-spark.sh` 安装spark客户端；
 4. 测试spark客户端是否部署OK；
 5. 部署 spark history server；
+
+首先，hdfs创建history的目录，比如: `hdfs:///spark/history`
+
+然后启动history server即可
+
+```
+./sbin/start-history-server.sh
+```
+
+然后去history server页面可以查看spark history服务：
+
+![](../../img/spark/6_spark_history.png)
 
 ## 验证步骤
 
