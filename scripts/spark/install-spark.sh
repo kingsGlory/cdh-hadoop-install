@@ -25,12 +25,3 @@ ln -s /usr/local/$spark_version /usr/local/spark
 echo "Installed finished, configurating..."
 # 将配置文件拷贝到spark对应目录下
 cp conf/spark/conf/* /usr/local/$spark_version/conf
-
-echo 'export SPARK_HOME=/usr/local/spark'  >> /etc/profile
-echo 'export PATH=$SPARK_HOME/bin:$PATH'  >> /etc/profile
-
-echo "验证环境变量"
-tail  /etc/profile
-
-echo "env 配置"
-tail /etc/spark/conf/spark-env.sh  -n 4
