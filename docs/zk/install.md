@@ -3,7 +3,7 @@
 
 2. 在主控机的用户目录下，建立下面目录结构，并放入对应的配置文件。  
 
-   ![1543474075368](C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\1543474075368.png)
+   ![dir](../../img/hadoop/init-dir.png)
 ## 部署
 在主控机上执行:  
 1. 安装: pssh -i -h zk.host sudo yum install zookeeper-server -y  

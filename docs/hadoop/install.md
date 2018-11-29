@@ -2,7 +2,7 @@
 
 1. 与zookeeper 准备相同，在主控机上准备下面目录信息。  
 
-   ![1543475023393](C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\1543475023393.png)
+   ![dir](../../img/hadoop/init-dir.png)
 
 2. 将nn、dn/nm、jn、rm的主机名放入cluster目录的nn.host、dn.host、jn.host、rm.host文件中。  all.host为所有主机.   
 
