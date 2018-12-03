@@ -31,8 +31,8 @@
 执行./script/hbase/hbase_manager.sh start
 
 ### 验证服务状态
-1、./script/hbase/hbase_manager.sh status
-2、访问 http://[master_host_ip]:60010/master-status
-3、访问hbase shell -->list
+1、./script/hbase/hbase_manager.sh status  
+2、访问 http://[master_host_ip]:60010/master-status  
+3、访问hbase shell -->list  
 
 ## [Spark部署](docs/spark/install.md)
