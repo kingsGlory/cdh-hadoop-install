@@ -9,7 +9,7 @@
 ## Hbase部署
 ### 依赖
 1、hbase 依赖hadoop，需要预先建好hadoop的根目录，例如hdfs://ns/hbase。
-2、安装好1.7版本以上的java
+2、安装好1.8版本的java
 3、安装好Zookeeper
 
 ### 准备
