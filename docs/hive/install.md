@@ -3,6 +3,9 @@
 1. 准备一台部署的主控机，主控机可以ssh无密码登录到要部署hive服务的机器。同时，主控机可以使用pssh、pscp、prsync等命令
 2. 要部署hive服务的机器提前安装好hadoop客户端，同时准备好要连接的MySQL服务器
 
+## 目录结构
+![hive_dir](../../img/hive/hive_dir.png)
+
 ## 部署步骤
 1. 登录到主控机，`cd cdh-hadoop-install`
 2. 修改metastore_hosts和server2_hosts文件，分别写入安装metastore和hiveserver2的ip地址
