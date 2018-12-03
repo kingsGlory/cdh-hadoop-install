@@ -1,11 +1,12 @@
 #!/bin/bash
 
 PWD_DIR=$(cd `dirname $0`;pwd)
-BASE_DIR=$PWD_DIR/../../../
-LOCAL_LIB=$BASE_DIR/conf/lib
-HIVE_LIB=/usr/lib/hive/lib
+BASE_DIR=$PWD_DIR/../..
 
-LOCAL_CONF=$BASE_DIR/conf
+LOCAL_CONF=$BASE_DIR/conf/hive/conf
+LOCAL_LIB=$LOCAL_CONF/lib
+
+HIVE_LIB=/usr/lib/hive/lib
 HIVE_CONF=/etc/hive/conf
 
 METASTORE_ADDR=$LOCAL_CONF/metastore_hosts
