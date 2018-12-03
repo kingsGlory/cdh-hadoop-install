@@ -5,10 +5,10 @@
 3、安装好Zookeeper
 
 ### 准备
-1、cd ./script/hbase & mkdir conf 
-2、cp –r ../../conf/hbase/ ./conf
-2、修改./script/hbase/masters 里的ip为master节点
-3、修改./script/hbase/regionservers 里的ip为rs节点们的ip列表
+1、cd ./script/hbase & mkdir conf  
+2、cp –r ../../conf/hbase/ ./conf  
+3、修改./script/hbase/masters 里的ip为master节点  
+4、修改./script/hbase/regionservers 里的ip为rs节点们的ip列表  
 
 ### 安装
 执行./script/hbase/install_hbase.sh install
