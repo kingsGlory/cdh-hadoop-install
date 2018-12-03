@@ -51,6 +51,10 @@ exec_restart() {
     pssh -h $SERVER2_ADDR -i "$SERVER2_SCRIPT restart"
 }
 
+exec_remove() {
+    pssh -h $1 -i -t 600 "sudo yum install hive hive-metastore hive-server2 -y;"
+}
+
 case $1 in
     'start')
     exec_start
@@ -66,6 +70,9 @@ case $1 in
     ;;
     'install')
     exec_install $2
+    ;;
+    'remove')
+    exec_remove $2
     ;;
 esac
 
