@@ -1,14 +1,15 @@
 #!/bin/bash
 
-BASE_DIR=$(cd `dirname $0`;pwd)
-LOCAL_LIB=$BASE_DIR/lib
+PWD_DIR=$(cd `dirname $0`;pwd)
+BASE_DIR=$PWD_DIR/../../../
+LOCAL_LIB=$BASE_DIR/conf/lib
 HIVE_LIB=/usr/lib/hive/lib
 
 LOCAL_CONF=$BASE_DIR/conf
 HIVE_CONF=/etc/hive/conf
 
-METASTORE_ADDR=$BASE_DIR/metastore_hosts
-SERVER2_ADDR=$BASE_DIR/server2_hosts
+METASTORE_ADDR=$LOCAL_CONF/metastore_hosts
+SERVER2_ADDR=$LOCAL_CONF/server2_hosts
 
 METASTORE_SCRIPT="sudo /etc/init.d/hive-metastore"
 SERVER2_SCRIPT="sudo /etc/init.d/hive-server2"
