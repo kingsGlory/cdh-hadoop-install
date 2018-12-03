@@ -21,11 +21,11 @@
 执行./script/hbase/install_hbase.sh install
 
 ### 同步配置
-0、进入./script/hbase/conf文件夹
-1、修改配置文件hbase-site.xml中的hbase.zookeeper.quorum项为zk地址
-2、修改配置文件hbase-site.xml中的hbase.rootdir项为实际hdfs地址
-3、依据服务器的实际情况修改配置文件hbase-env.sh中的jvm配置。
-4、执行./script/hbase/hbase_manager.sh sync
+0、进入./script/hbase/conf文件夹  
+1、修改配置文件hbase-site.xml中的hbase.zookeeper.quorum项为zk地址  
+2、修改配置文件hbase-site.xml中的hbase.rootdir项为实际hdfs地址  
+3、依据服务器的实际情况修改配置文件hbase-env.sh中的jvm配置。  
+4、执行./script/hbase/hbase_manager.sh sync  
 
 ### 启动
 执行./script/hbase/hbase_manager.sh start
