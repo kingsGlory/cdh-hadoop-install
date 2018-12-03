@@ -28,7 +28,6 @@
    pssh -t 500 -i -h dn.host  "mkdir -p /data1/hdfs;chown hdfs:hadoop /data1/hdfs;chmod 700 /data1/hdfs "    
 
 3. 配置推送:  
-
    #nn conf  
    pscp.pssh  -h nn.host hadoop/conf/*.xml /tmp/  
    pscp.pssh  -h nn.host hadoop/conf/RackAware.py /tmp/  
@@ -42,11 +41,11 @@
    pssh -i -h jn.host mv /tmp/RackAware.py /etc/hadoop/conf/   
 
    #dn nm conf
-   pscp.pssh  -h dn.host hadoop/conf/*.xml /tmp/
-   pscp.pssh  -h dn.host hadoop/conf/RackAware.py /tmp/
-   pssh -i -h dn.host "mv /tmp/*.xml /etc/hadoop/conf/"
-   pssh -i -h dn.host mv /tmp/RackAware.py /etc/hadoop/conf/
-   pssh -i -h dn.host "/etc/init.d/hadoop-hdfs-datanode start"
+   pscp.pssh  -h dn.host hadoop/conf/*.xml /tmp/  
+   pscp.pssh  -h dn.host hadoop/conf/RackAware.py /tmp/  
+   pssh -i -h dn.host "mv /tmp/*.xml /etc/hadoop/conf/"  
+   pssh -i -h dn.host mv /tmp/RackAware.py /etc/hadoop/conf/  
+   pssh -i -h dn.host "/etc/init.d/hadoop-hdfs-datanode start"  
 
    #rm
    pssh -i -h dn.host "mkdir -p /data1/yarn/local;mkdir -p /data1/yarn/logs;chown -R     yarn:hadoop /data1/yarn;chmod -R 755 /data1/yarn "  
@@ -55,26 +54,22 @@
    pssh -i -h all.host "mv /tmp/conf/* /etc/hadoop/conf/"  
    pssh -i -h all.host chmod +x /etc/hadoop/conf/RackAware.py  
 ## 初始化及启动
-
 1. 初始化及启动: start jn,nn,zkfc  
-   pssh -i -h jn.host "/etc/init.d/hadoop-hdfs-journalnode start"  
-   hdfs zkfc -formatZK  
-   hdfs namdenode -format  
-   pssh -i -h nn.host "/etc/init.d/hadoop-hdfs-zkfc start"  
-   big-data-1: "/etc/init.d/hadoop-hdfs-namenode start"  
+   pssh -i -h jn.host "/etc/init.d/hadoop-hdfs-journalnode start"   
+   hdfs zkfc -formatZK   
+   hdfs namdenode -format   
+   pssh -i -h nn.host "/etc/init.d/hadoop-hdfs-zkfc start"   
+   big-data-1: "/etc/init.d/hadoop-hdfs-namenode start"   
    big-data-2: "sudo -uhdfs hdfs namenode -bootstrapStandby"  
-   big-data-2: "/etc/init.d/hadoop-hdfs-namenode start"   
+   big-data-2: "/etc/init.d/hadoop-hdfs-namenode start"    
 
 2. 启动dn，rm，nm  
-
    pssh -i -h dn.host "/etc/init.d/hadoop-hdfs-datanode start"     
-
    pssh -t 500 -i -h rm.host "/etc/init.d/hadoop-yarn-resourcemanager start"   
-
-   pssh -i -h dn.host " /etc/init.d/hadoop-yarn-nodemanager start"     
+   pssh -i -h dn.host " /etc/init.d/hadoop-yarn-nodemanager start"  
+   
 3. hdfs初始化
-
-​      在主控机执行:  sh hadoop/init-hdfs.sh
+   在主控机执行:  sh hadoop/init-hdfs.sh
 
 ## 卸载  
    pssh -t 500 -i -h nn.host "sudo yum remove hadoop-hdfs-namenode -y"  
@@ -83,4 +78,9 @@
    pssh -t 500 -i -h all.host "sudo yum remove hadoop-lzo -y"  
    pssh -t 500 -i -h dn.host "sudo yum remove hadoop-hdfs-datanode -y" 
    pssh -t 500 -i -h dn.host "sudo yum remove hadoop-hdfs-nodenamager -y"   
-   pssh -t 500 -i -h rm.host "sudo yum remove hadoop-yarn-resourcemanager -y"    
+   pssh -t 500 -i -h rm.host "sudo yum remove hadoop-yarn-resourcemanager -y"   
+   
+## 验证
+   hdfs 使用 hadoop fs -put  ; hadoop fs -get 测试上传下载文件
+   yarn 运行wordcount: yarn jar /usr/lib/hadoop-mapreduce/hadoop-mapreduce-examples-2.6.0-cdh5.12.1.jar wordcount  /user/tuhu/wordcount11  /user/tuhu/tmp1
+   
