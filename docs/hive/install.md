@@ -10,8 +10,7 @@ Hive服务部署包括HiveServer2和Metastore两部分，hiveserver2和metastore
 
 ## 部署步骤
 1. 登录到主控机  
-2. 修改配置文件：`cd cdh-hadoop-install/conf/hive/conf`，修改metastore_hosts和server2_hosts文件，分别写入要安装metastore和hiveserver2的ip地址(目前测试server2_hosts和metastore_hosts内容是相同的) 
-实际的业务需求和机器配置差异较大，请根据自身需求修改hive-site.xml配置文件 
+2. 修改配置文件：`cd cdh-hadoop-install/conf/hive/conf`，修改metastore_hosts和server2_hosts文件，分别写入要安装metastore和hiveserver2的ip地址(目前测试server2_hosts和metastore_hosts内容是相同的)。实际的业务需求和机器配置差异较大，请根据自身需求修改hive-site.xml配置文件 
 3. 安装hiveserver2和metastore服务：`cd cdh-hadoop-install/scripts/hive`，`sh hive-manager.sh install server2_hosts`  
 4. 同步配置文件：`sh hive-manager.sh sync`  
 5. 启动metastore和hiveserver2服务：`sh hive-manager.sh start`

@@ -3,7 +3,7 @@
 PWD_DIR=$(cd `dirname $0`;pwd)
 BASE_DIR=$PWD_DIR/../..
 
-LOCAL_CONF=$BASE_DIR/conf/hive/conf
+LOCAL_CONF=$BASE_DIR/conf/hive
 LOCAL_LIB=$LOCAL_CONF/lib
 
 HIVE_LIB=/usr/lib/hive/lib
