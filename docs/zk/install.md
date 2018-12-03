@@ -29,3 +29,6 @@
    pssh -i -h zk.host sudo /etc/init.d/zookeeper-server start  
 ## 卸载  
 1. pssh -i -h zk.host sudo yum remove zookeeper-server   
+
+## 验证
+1. 登录zk集群: big-data-1: zookeeper-client 查看是否正常。
